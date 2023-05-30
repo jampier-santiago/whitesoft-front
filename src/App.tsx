@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Suspense } from "react";
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <Suspense fallback={<div>Loading...</div>}>
+      <main>
+        <h1>Project</h1>
+
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+          voluptatem quod laboriosam saepe laborum fuga quidem labore laudantium
+          vero? Dolorum temporibus harum facere quaerat, officia quam porro eum
+          soluta aliquid!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </main>
+    </Suspense>
   );
 }
 
