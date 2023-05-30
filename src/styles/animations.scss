@@ -1,0 +1,12 @@
+// Link hover animation
+@keyframes link-hover-animation {
+  from {
+    left: -100%;
+    right: 100%;
+  }
+
+  to {
+    left: 0;
+    right: 0;
+  }
+}

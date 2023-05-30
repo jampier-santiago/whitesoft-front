@@ -1,19 +1,28 @@
-import { Suspense } from "react";
+// Packages
+import { Suspense, useState, useMemo } from "react";
+import { BrowserRouter } from "react-router-dom";
+
+// Context
+import LoginContext from "helpers/login.context";
+
+// Router
+import useRouter from "router/router";
+
+// Stlyes
 import "./App.scss";
 
 function App() {
+  const Router = useRouter();
+
+  const [isLogged, setIsLogged] = useState<boolean>(false);
+
+  const loginData = useMemo(() => ({ isLogged, setIsLogged }), [isLogged]);
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <main>
-        <h1>Project</h1>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-          voluptatem quod laboriosam saepe laborum fuga quidem labore laudantium
-          vero? Dolorum temporibus harum facere quaerat, officia quam porro eum
-          soluta aliquid!
-        </p>
-      </main>
+      <LoginContext.Provider value={loginData}>
+        <BrowserRouter>{Router}</BrowserRouter>
+      </LoginContext.Provider>
     </Suspense>
   );
 }

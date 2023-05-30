@@ -1,0 +1,25 @@
+.footer {
+  width: 100%;
+  padding: 1.625rem 2rem;
+  background-color: $light-blue;
+
+  &__title {
+    font-size: 1.125rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: $dark-blue;
+    font-weight: 800;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    margin: 0;
+    color: $dark-grey;
+    font-family: $font-body;
+    font-weight: 400;
+
+    &:first-of-type {
+      margin-bottom: 0.75rem;
+    }
+  }
+}
