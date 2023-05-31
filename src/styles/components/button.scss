@@ -1,0 +1,24 @@
+.button {
+  width: max-content;
+  padding: 18px 32px;
+  border-radius: 16px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px rgba($color: #000000, $alpha: 0.1);
+  transition-duration: 0.2s;
+  background-color: $light-blue;
+  color: $dark-blue;
+
+  &.full {
+    width: 100%;
+  }
+
+  &:hover {
+    box-shadow: 4px 4px 15px rgba($color: #fff, $alpha: 0.5) inset;
+    background-color: $dark-blue;
+    color: $light-blue;
+  }
+}

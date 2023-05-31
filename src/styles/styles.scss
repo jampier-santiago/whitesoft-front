@@ -4,9 +4,11 @@
 // Animations
 @import "./animations";
 
-// Pages
-@import "./pages/register";
-
 // Components
 @import "./components/footer";
 @import "./components/nav";
+@import "./components/input";
+@import "./components/button";
+
+// Pages
+@import "./pages/register";

@@ -1,8 +1,61 @@
 // Packages
 import { FC } from "react";
 
+// Controllers
+import useRegisterController from "controllers/pages/register.controller";
+
+// Components
+import useComponents from "components";
+
 const Register: FC = () => {
-  return <div>Regsiter</div>;
+  // Controllers
+  const { register, handleSubmit, submit, errors } = useRegisterController();
+
+  // Components
+  const { Input, Button } = useComponents();
+
+  return (
+    <main className="register">
+      <h1 className="register__title">Registrate con nostros</h1>
+
+      <form onSubmit={handleSubmit(submit)} className="register__form">
+        <div className="fields">
+          <div className="fields__element">
+            <Input
+              id="name"
+              placeholder="Escribe tu nombre"
+              textLabel="Escribe tu nombre"
+              variant="input"
+              register={register}
+              required
+              error={(errors as any).name}
+              messageError="Este campo es obligatorio"
+              autoComplete="off"
+            />
+          </div>
+
+          <div className="fields__element">
+            <Input
+              id="country"
+              placeholder="Selecciona tu pais"
+              textLabel="Selecciona tu pais"
+              variant="select"
+              options={[
+                { text: "Hola", value: "aaaa" },
+                { text: "Hola", value: "aaaa" },
+              ]}
+              register={register}
+              required
+              error={(errors as any).country}
+              messageError="Este campo es obligatorio"
+            />
+          </div>
+        </div>
+
+        <Button text="Registrarme" className="form-botton" widthFull />
+      </form>
+    </main>
+  );
 };
 
 export default Register;

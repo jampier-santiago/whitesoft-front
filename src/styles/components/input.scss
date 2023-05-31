@@ -1,0 +1,42 @@
+@mixin input {
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.9375rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.input-component {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+  position: relative;
+
+  &__input-component {
+    font-family: $font-body;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  &__input {
+    @include input();
+    border: 1px solid $dark-blue;
+
+    &--error {
+      @include input();
+      border: 1px solid $light-red;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -26px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: $font-title;
+    display: block;
+    margin-top: 12px;
+    color: $dark-red;
+  }
+}
