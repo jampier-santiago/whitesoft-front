@@ -7,9 +7,12 @@ import usePages from "pages";
 // Layouts
 import useLayouts from "layouts";
 
+// PrivateRoute
+import PrivateRoute from "./PrivateRoute";
+
 const useRouter = () => {
   // Components
-  const { Login, Register } = usePages();
+  const { Login, Register, Dashboard } = usePages();
 
   // Layouts
   const { MainLayout } = useLayouts();
@@ -30,6 +33,18 @@ const useRouter = () => {
           <MainLayout>
             <Login />
           </MainLayout>
+        }
+      />
+      <Route
+        path="/admin"
+        element={
+          <PrivateRoute
+            element={
+              <MainLayout>
+                <Dashboard />
+              </MainLayout>
+            }
+          ></PrivateRoute>
         }
       />
 

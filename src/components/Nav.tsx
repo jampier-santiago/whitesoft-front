@@ -13,7 +13,8 @@ import user from "assets/usuario.png";
 
 const Nav: FC = () => {
   // Controller
-  const { isLogged, setIsLogged, setShowModal, showModal } = useNavController();
+  const { isLogged, setIsLogged, setShowModal, showModal, handleLogout } =
+    useNavController();
 
   return (
     <nav className="nav">
@@ -30,12 +31,12 @@ const Nav: FC = () => {
 
       <div className="nav__actions">
         {isLogged ? (
-          <Link to="/" onClick={() => setIsLogged(false)}>
+          <Link to="/" onClick={handleLogout}>
             Cerrar Sesion
             <span></span>
           </Link>
         ) : (
-          <Link to="/">
+          <Link to="/login">
             Ingresar
             <span></span>
           </Link>

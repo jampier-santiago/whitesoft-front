@@ -6,12 +6,18 @@ import LoginContext from "helpers/login.context";
 
 const useNavController = () => {
   // Context
-  const { isLogged, setIsLogged } = useContext(LoginContext);
+  const { isLogged, setIsLogged, setToken } = useContext(LoginContext);
 
   // States
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  return { isLogged, setIsLogged, showModal, setShowModal };
+  // Functions
+  const handleLogout = () => {
+    setIsLogged(false);
+    setToken("");
+  };
+
+  return { isLogged, setIsLogged, showModal, setShowModal, handleLogout };
 };
 
 export default useNavController;

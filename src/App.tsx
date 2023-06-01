@@ -15,8 +15,12 @@ function App() {
   const Router = useRouter();
 
   const [isLogged, setIsLogged] = useState<boolean>(false);
+  const [token, setToken] = useState<string>("");
 
-  const loginData = useMemo(() => ({ isLogged, setIsLogged }), [isLogged]);
+  const loginData = useMemo(
+    () => ({ isLogged, setIsLogged, token, setToken }),
+    [isLogged, token]
+  );
 
   return (
     <Suspense fallback={<div>Loading...</div>}>

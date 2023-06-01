@@ -7,13 +7,13 @@ interface Register {
 }
 
 const makeRegister = (body: Register): Promise<any> => {
-  return new Promise(async (response, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       const res = await new AxiosAdapter().post(
         `${process.env.REACT_APP_API_BACK}/registers`,
         { ...body }
       );
-      response(res);
+      resolve(res);
     } catch (error: any) {
       reject(error);
     }
