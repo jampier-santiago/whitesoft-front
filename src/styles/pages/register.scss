@@ -1,11 +1,11 @@
 .register {
   width: 100%;
-  padding-top: 45px;
-  height: calc(100vh - 78.5px - 144px);
+  padding-top: 2.8125rem;
+  height: calc(100vh - 4.90625rem - 9rem);
 
   &__title {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 
     @media (min-width: $mobile-large) {
       margin-bottom: 10vh;
@@ -33,7 +33,16 @@
 
       &__element {
         width: 100%;
-        margin-bottom: 24px;
+        margin-bottom: 1.5rem;
+        position: relative;
+
+        img {
+          width: 1.125rem;
+          top: 45%;
+          left: 0.9375rem;
+          position: absolute;
+          z-index: 10;
+        }
 
         @media (min-width: $mobile-large) {
           width: 40%;
@@ -42,11 +51,15 @@
 
         div {
           width: 100%;
-          margin-bottom: 24px;
+          margin-bottom: 1.5rem;
 
           input,
           select {
             width: 100%;
+          }
+
+          select {
+            padding-left: 2.625rem;
           }
         }
       }

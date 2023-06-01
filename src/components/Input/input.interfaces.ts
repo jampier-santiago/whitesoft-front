@@ -14,4 +14,5 @@ export interface InputProps {
   autoComplete?: "off" | "on";
   error?: boolean;
   messageError: string;
+  onChange?: (data: any) => void;
 }

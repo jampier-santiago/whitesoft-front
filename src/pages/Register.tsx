@@ -9,7 +9,15 @@ import useComponents from "components";
 
 const Register: FC = () => {
   // Controllers
-  const { register, handleSubmit, submit, errors } = useRegisterController();
+  const {
+    register,
+    handleSubmit,
+    submit,
+    errors,
+    countries,
+    activeCountry,
+    handleFlagForActiveCountry,
+  } = useRegisterController();
 
   // Components
   const { Input, Button } = useComponents();
@@ -35,19 +43,21 @@ const Register: FC = () => {
           </div>
 
           <div className="fields__element">
+            {activeCountry && (
+              <img src={activeCountry.flag} alt={activeCountry.name} />
+            )}
+
             <Input
               id="country"
               placeholder="Selecciona tu pais"
               textLabel="Selecciona tu pais"
               variant="select"
-              options={[
-                { text: "Hola", value: "aaaa" },
-                { text: "Hola", value: "aaaa" },
-              ]}
+              options={countries}
               register={register}
               required
               error={(errors as any).country}
               messageError="Este campo es obligatorio"
+              onChange={handleFlagForActiveCountry}
             />
           </div>
         </div>

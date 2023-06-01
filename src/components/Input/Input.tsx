@@ -18,6 +18,7 @@ const Input: FC<InputProps> = ({
   autoComplete,
   messageError,
   error,
+  onChange,
 }) => {
   return (
     <div className={`input-component ${className ?? ""}`}>
@@ -36,6 +37,7 @@ const Input: FC<InputProps> = ({
           className={
             error ? "input-component__input--error" : "input-component__input"
           }
+          onChange={onChange}
         />
       ) : (
         <select
@@ -46,6 +48,7 @@ const Input: FC<InputProps> = ({
           className={
             error ? "input-component__input--error" : "input-component__input"
           }
+          onChange={onChange}
         >
           <option value="">{placeholder}</option>
           {options &&
