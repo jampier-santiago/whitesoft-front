@@ -53,12 +53,12 @@ const Nav: FC = () => {
       {showModal && (
         <article className="modal">
           {isLogged ? (
-            <Link to="/" onClick={() => setIsLogged(false)}>
+            <Link to="/" onClick={handleLogout}>
               Cerrar Sesion
               <span></span>
             </Link>
           ) : (
-            <Link to="/">
+            <Link to="/login">
               Ingresar
               <span></span>
             </Link>
