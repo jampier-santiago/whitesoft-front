@@ -23,8 +23,8 @@ const Login: FC = () => {
           <div className="fields__element">
             <Input
               id="email"
-              placeholder="Escribe correo"
-              textLabel="Escribe correo"
+              placeholder="Escribe tu correo"
+              textLabel="Escribe tu correo"
               variant="input"
               register={register}
               required
@@ -37,8 +37,8 @@ const Login: FC = () => {
           <div className="fields__element">
             <Input
               id="password"
-              placeholder="Escribe contraseña"
-              textLabel="Escribe contraseña"
+              placeholder="Escribe tu contraseña"
+              textLabel="Escribe tu contraseña"
               variant="input"
               register={register}
               required

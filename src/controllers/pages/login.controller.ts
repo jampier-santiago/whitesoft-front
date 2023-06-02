@@ -31,6 +31,9 @@ const useLoginController = () => {
   const { login } = useLoginEndpoints();
 
   // Functions
+  /**
+   * Function for send the form data
+   */
   const submit = (data: any) => {
     login({ email: data.email, password: data.password })
       .then((data: any) => {

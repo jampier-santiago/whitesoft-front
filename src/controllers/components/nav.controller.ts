@@ -12,6 +12,9 @@ const useNavController = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   // Functions
+  /**\
+   * Function to terminate the user's session
+   */
   const handleLogout = () => {
     setIsLogged(false);
     setToken("");

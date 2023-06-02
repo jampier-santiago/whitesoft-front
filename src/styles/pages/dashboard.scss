@@ -1,8 +1,91 @@
 .dashboard {
   width: 100%;
-  padding: 32px;
+  padding: 2rem;
 
   &__title {
     text-align: center;
+  }
+
+  &__table {
+    width: 95%;
+    margin: auto;
+    margin-top: 2.625rem;
+
+    @media (min-width: $desktop-small) {
+      width: 70%;
+    }
+
+    .header {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      @media (min-width: $desktop-small) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      h4 {
+        text-align: center;
+
+        &:first-of-type,
+        &:last-of-type {
+          display: none;
+
+          @media (min-width: $desktop-small) {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .row {
+      width: 100%;
+      display: grid;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $dark-grey;
+      padding: 0 0.75rem;
+      grid-template-columns: repeat(2, 1fr);
+
+      @media (min-width: $desktop-small) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      h4 {
+        text-align: center;
+
+        &:first-of-type,
+        &:last-of-type {
+          display: none;
+
+          @media (min-width: $desktop-small) {
+            display: block;
+          }
+        }
+      }
+
+      div {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 0.75rem;
+
+        img {
+          width: 2rem;
+        }
+      }
+    }
+  }
+
+  &__empty {
+    width: 100%;
+    height: calc(100vh - 4.90625rem - 19rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      text-align: center;
+    }
   }
 }

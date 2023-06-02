@@ -24,8 +24,9 @@ const Register: FC = () => {
 
   return (
     <main className="register">
-      <h1 className="register__title">Registrate con nostros</h1>
+      <h1 className="register__title">Regístrate con nosotros</h1>
 
+      {/* Form  */}
       <form onSubmit={handleSubmit(submit)} className="register__form">
         <div className="fields">
           <div className="fields__element">
@@ -49,7 +50,7 @@ const Register: FC = () => {
 
             <Input
               id="country"
-              placeholder="Selecciona tu pais"
+              placeholder="Selecciona tu país"
               textLabel="Selecciona tu pais"
               variant="select"
               options={countries}
@@ -64,6 +65,7 @@ const Register: FC = () => {
 
         <Button text="Registrarme" className="form-botton" widthFull />
       </form>
+      {/* Form  */}
     </main>
   );
 };

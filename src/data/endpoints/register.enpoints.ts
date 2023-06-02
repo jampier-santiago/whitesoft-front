@@ -20,8 +20,23 @@ const makeRegister = (body: Register): Promise<any> => {
   });
 };
 
+const getAllRegisters = (token: string) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const res = await new AxiosAdapter().get(
+        `${process.env.REACT_APP_API_BACK}/registers`,
+        { headers: { "x-token": token } }
+      );
+
+      resolve(res);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+
 const useRegisterEndpoints = () => {
-  return { makeRegister };
+  return { makeRegister, getAllRegisters };
 };
 
 export default useRegisterEndpoints;

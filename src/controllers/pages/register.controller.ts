@@ -36,7 +36,7 @@ const useRegisterController = () => {
 
   // Functions
   /**
-   * Function for do validations and send the form data
+   * Function for send the form data
    */
   const submit = (data: any) => {
     const body = { name: data.name, country: "das" };
@@ -48,7 +48,7 @@ const useRegisterController = () => {
           MySwal.fire({
             title: "Success",
             icon: "success",
-            text: "The register was inserted success",
+            text: "El registro fue ingresado con éxito",
             confirmButtonText: "Next",
           })
             .then(() => {
@@ -65,7 +65,7 @@ const useRegisterController = () => {
           MySwal.fire({
             title: "Error",
             icon: "error",
-            text: "Error with the server",
+            text: "Error con el servidor, por favor inténtelo en otro momento",
             confirmButtonText: "Close",
           })
             .then(() => {})
@@ -92,7 +92,7 @@ const useRegisterController = () => {
   };
 
   /**
-   * Get all countries for the select component
+   * Function to bring all the countries from the database
    */
   const handleCountries = async () => {
     const countries = await getAllCountries();
@@ -109,6 +109,9 @@ const useRegisterController = () => {
     }
   };
 
+  /**
+   * Function to handle country change
+   */
   const handleFlagForActiveCountry = (element: any) => {
     const id = element.target.value;
 
