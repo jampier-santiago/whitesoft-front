@@ -39,7 +39,7 @@ const useRegisterController = () => {
    * Function for send the form data
    */
   const submit = (data: any) => {
-    const body = { name: data.name, country: "das" };
+    const body = { name: data.name, country: data.country };
 
     // Send data for endpoint
     makeRegister(body)
