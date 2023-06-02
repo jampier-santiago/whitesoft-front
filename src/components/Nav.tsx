@@ -13,7 +13,7 @@ import user from "assets/usuario.png";
 
 const Nav: FC = () => {
   // Controller
-  const { isLogged, setIsLogged, setShowModal, showModal, handleLogout } =
+  const { isLogged, setShowModal, showModal, handleLogout } =
     useNavController();
 
   return (
